@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Soil_probe.X
+PROJECTNAME=Soil_Probe.X
 
 # Active Configuration
 DEFAULTCONF=default
