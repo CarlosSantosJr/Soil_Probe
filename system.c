@@ -21,8 +21,8 @@
 #pragma config DEBUG = ON
 
 void SYSTEM_Initialize(void) {
-    OSCILLATOR_Initialize();
-    init_i2c(0xE0);
+    INTCONbits.PEIE = 1;
+    INTCONbits.GIE  = 1;                //enable global and peripheral interrupt
 }
 
 void OSCILLATOR_Initialize(void) {

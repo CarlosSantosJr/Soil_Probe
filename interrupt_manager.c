@@ -13,8 +13,10 @@ void __interrupt() INTERRUPT_InterruptManager(void) {
         } else { // Master wants to READ (R_nW = 1)
             SSPBUF;
             SSPBUF = dado;
-            SSPCONbits.CKP = 1;
         }
+        SSPCONbits.CKP = 1;
         PIR1bits.SSPIF = 0;
+    } else if (INTCONbits.TMR0IE) {
+        INTCONbits.TMR0IF = 0; 
     }
 }

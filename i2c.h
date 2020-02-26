@@ -3,6 +3,6 @@
 
 #include <pic16f88.h>
 
-void init_i2c(short address);
+void I2C_Iniatialize(short address);
 
 #endif	/* I2C_SLAVE_H */

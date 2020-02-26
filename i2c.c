@@ -1,7 +1,7 @@
 #include <xc.h>
 #include "i2c.h"
 
-void init_i2c(short address) {
+void I2C_Iniatialize(short address) {
     ANSEL           = 0b00000000;               //All digital inputs
     TRISA           = 0b11111000;               //porta   
     PORTA           = 0b00000000;
@@ -13,7 +13,5 @@ void init_i2c(short address) {
     SSPCON          = 0b00110110;       //(SSPEN)SDA+SCL are serial port source pins ; Enable clock ; I2C mode 7-bits address ; Start stoP interrupts disabled    
     PIR1bits.SSPIF  = 0;                //Clear the serial port interrupt flag
     PIE1bits.SSPIE  = 1;                //enable Synchronious Serial Port interrupts
-    INTCONbits.PEIE = 1;
-    INTCONbits.GIE  = 1;                //enable global and peripheral interrupt
     SSPADD          = address;
 }
